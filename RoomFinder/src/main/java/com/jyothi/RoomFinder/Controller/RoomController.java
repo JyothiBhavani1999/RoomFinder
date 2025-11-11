@@ -4,12 +4,12 @@ import com.jyothi.RoomFinder.Model.Room;
 import com.jyothi.RoomFinder.Repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/api")
 public class RoomController {
     @Autowired
     RoomRepository roomRepository;
@@ -19,9 +19,11 @@ public class RoomController {
         return "Hello, Room Finder!";
     }
 
-    @GetMapping("/rooms")
-    public List<Room> getRooms() {
-        return roomRepository.findAll();
+    @GetMapping("/rooms-list")
+    public String listRooms(Model model) {
+        List<Room> rooms = roomRepository.findAll();
+        model.addAttribute("rooms", rooms);
+        return "rooms-list";
     }
 
     @GetMapping("/add-room")
