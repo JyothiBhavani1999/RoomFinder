@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Room Details by ID</title>
+</head>
+<body>
+<h1>Room Details</h1>
+
+<div>
+  <p>Room ID: <span th:text=" ${room.id} ">Room ID</span></p>
+    <p> City: <span th:text=" ${room.city} ">Room Name</span></p>
+    <p>Address: <span th:text=" ${room.address} ">Capacity</span></p>
+    <p>Rent: <span th:text=" ${room.rent} ">Location</span></p>
+
+  <a href="/rooms-list">Back to Room List</a>
+
+</div>
+
+</body>
+</html>
