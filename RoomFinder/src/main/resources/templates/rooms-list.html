@@ -19,7 +19,10 @@
     <td th:text="${room.address}">Address</td>
     <td th:text="${room.rent}">Rent</td>
     <td>
-      <a th:href="@{'/edit-room/' + ${room.id}}"> Edit </a>
+      <a th:href="@{/edit-room/{id} (id = ${room.id})}"> Edit </a>
+    </td>
+    <td>
+      <a th:href="@{/delete-room/{id} (id = ${room.id})}"> Delete </a>
     </td>
   </tr>
 </table>

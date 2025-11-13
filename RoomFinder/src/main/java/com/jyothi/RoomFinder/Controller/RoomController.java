@@ -60,5 +60,11 @@ public class RoomController {
         return "redirect:/rooms-list";
     }
 
+    @GetMapping("/delete-room/{id}")
+    public String deleteRoom(@PathVariable Long id){
+       roomService.deleteRoom(id);
+         return "redirect:/rooms-list";
+    }
+
 
 }
